@@ -8,6 +8,8 @@ use app\models\DatakabupatenataukotaSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\dataprovinsi;
+use yii\helpers\ArrayHelper;
 
 /**
  * DatakabupatenataukotaController implements the CRUD actions for Datakabupatenataukota model.
@@ -66,12 +68,16 @@ class DatakabupatenataukotaController extends Controller
     {
         $model = new Datakabupatenataukota();
 
+        $data = Dataprovinsi::find()->all();
+        $data = ArrayHelper::map($data,'IdProvinsi', 'NamaProvinsi');
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->IdKabupatenAtauKota]);
         }
 
         return $this->render('create', [
             'model' => $model,
+            'data' => $data,
         ]);
     }
 
@@ -86,12 +92,16 @@ class DatakabupatenataukotaController extends Controller
     {
         $model = $this->findModel($id);
 
+        $data = Dataprovinsi::find()->all();
+        $data = ArrayHelper::map($data,'IdProvinsi', 'NamaProvinsi');
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->IdKabupatenAtauKota]);
         }
 
         return $this->render('update', [
             'model' => $model,
+            'data' => $data,
         ]);
     }
 

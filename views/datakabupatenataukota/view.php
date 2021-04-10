@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Datakabupatenataukota */
 
-$this->title = $model->IdKabupatenAtauKota;
-$this->params['breadcrumbs'][] = ['label' => 'Datakabupatenataukotas', 'url' => ['index']];
+$this->title = $model->NamaKabupatenAtauKota;
+$this->params['breadcrumbs'][] = ['label' => 'Data Kabupaten/kotas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>

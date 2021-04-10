@@ -9,6 +9,8 @@ use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\EntryForm;
+use app\models\Bukutamu;
 
 class SiteController extends Controller
 {
@@ -61,7 +63,15 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $model = new Bukutamu();
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['index', 'id' => $model->ID]);
+        }
+
+        return $this->render('index', [
+            'model' => $model,
+        ]);
     }
 
     /**

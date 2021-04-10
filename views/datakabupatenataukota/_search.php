@@ -17,7 +17,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'IdKabupatenAtauKota') ?>
 
-    <?= $form->field($model, 'IdProvinsi') ?>
+    <?= $form->field($model, 'IdProvinsi')->label('Nama Provinsi') ?>
 
     <?= $form->field($model, 'NamaKabupatenAtauKota') ?>
 

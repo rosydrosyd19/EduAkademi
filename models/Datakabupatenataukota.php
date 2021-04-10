@@ -31,8 +31,9 @@ class Datakabupatenataukota extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['IdKabupatenAtauKota'], 'required'],
+            // [['IdKabupatenAtauKota'], 'required'],
             [['IdKabupatenAtauKota', 'IdProvinsi'], 'integer'],
+            [['NamaKabupatenAtauKota'], 'required'],
             [['NamaKabupatenAtauKota'], 'string', 'max' => 52],
             [['Keterangan'], 'string', 'max' => 191],
             [['IdKabupatenAtauKota'], 'unique'],

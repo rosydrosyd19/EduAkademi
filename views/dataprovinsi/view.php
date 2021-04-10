@@ -6,8 +6,8 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Dataprovinsi */
 
-$this->title = $model->IdProvinsi;
-$this->params['breadcrumbs'][] = ['label' => 'Dataprovinsis', 'url' => ['index']];
+$this->title = $model->NamaProvinsi;
+$this->params['breadcrumbs'][] = ['label' => 'Data Provinsi', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>

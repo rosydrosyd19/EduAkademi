@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\DataprovinsiSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Dataprovinsis';
+$this->title = 'Data Provinsi';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="dataprovinsi-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Dataprovinsi', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Data Provinsi', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -26,7 +26,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'IdProvinsi',
+            // 'IdProvinsi',
             'NamaProvinsi',
             'Keterangan',
 

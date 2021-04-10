@@ -1,53 +1,66 @@
 <?php
 
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
 /* @var $this yii\web\View */
-
-$this->title = 'My Yii Application';
+/* @var $model app\models\Bukutamu */
+/* @var $form yii\widgets\ActiveForm */
+$this->title = 'Dashboard';
+$this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-index">
+<h1><?= Html::encode($this->title) ?></h1>
 
-    <div class="jumbotron">
-        <h1>Congratulations!</h1>
+<div border="1" style="width: 100%;
+     height: auto;
+     border: 4px solid black;
+     border-radius: 10px;
+     font-size:10px">
+    <h2 style="padding-left:50px">Selamat Datang</h2>
+    <p style="padding-left:50px">Ini Merupakan halaman sistem administrasi Bimbingan Belajar edubarnd</p>
+</div>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+<table style="width:100%;margin-top:50px" >
+  <tr>
+    <td style="width:40%" valign="top">
+        <div border="1" style="width: 96%;
+        height: auto;
+        border: 4px solid black;
+        border-radius: 10px;
+        font-size:10px;
+        padding:10px 0px 20px 0px">
+            <h2 style="padding-left:50px" ><b>20 </b>siswa</h2>
+    </td>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
-    </div>
+    <td>
+        <div class="bukutamu-form">
 
-    <div class="body-content">
+        <?php $form = ActiveForm::begin(); ?>
 
-        <div class="row">
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+        <?= $form->field($model, 'NamaOrangTua')->textInput(['maxlength' => true]) ?>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+        <?= $form->field($model, 'NoHP')->textInput() ?>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/doc/">Yii Documentation &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+        <?= $form->field($model, 'NamaSiswa')->textInput(['maxlength' => true]) ?>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+        <?= $form->field($model, 'NoHPSiswa')->textInput() ?>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/forum/">Yii Forum &raquo;</a></p>
-            </div>
-            <div class="col-lg-4">
-                <h2>Heading</h2>
+        <?= $form->field($model, 'Alamat')->textInput(['rows' => 6]) ?>
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                    dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
-                    ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                    fugiat nulla pariatur.</p>
+        <?= $form->field($model, 'AsalSekolah')->textInput(['maxlength' => true]) ?>
 
-                <p><a class="btn btn-default" href="http://www.yiiframework.com/extensions/">Yii Extensions &raquo;</a></p>
-            </div>
+        <?= $form->field($model, 'Kelas')->textInput(['maxlength' => true]) ?>
+
+        <?= $form->field($model, 'Keterangan')->textInput(['maxlength' => true]) ?>
+
+        <div class="form-group">
+            <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
         </div>
 
-    </div>
-</div>
+        <?php ActiveForm::end(); ?>
+
+        </div>
+    </td>
+  </tr>
+</table> 
+
