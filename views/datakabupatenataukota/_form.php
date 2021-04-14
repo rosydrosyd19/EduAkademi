@@ -13,11 +13,6 @@ use kartik\select2\Select2;
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <!-- <?= $form->field($model, 'IdKabupatenAtauKota')->textInput() ?> -->
-
-    <!-- <?= $form->field($model, 'IdProvinsi')->textInput() ?> -->
-
-    <!-- // Form select dengan ActiveForm & model -->
     <?= 
         $form->field($model, 'IdProvinsi')->widget(Select2::classname(), [
             'data' => $data,
@@ -28,13 +23,12 @@ use kartik\select2\Select2;
         ])->label('Nama Provinsi'); 
     ?>
 
-
     <?= $form->field($model, 'NamaKabupatenAtauKota')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'Keterangan')->textarea(['maxlength' => true]) ?>
+    <?= $form->field($model, 'Keterangan')->textarea() ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Simpan', ['class' => 'btn btn-success']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>

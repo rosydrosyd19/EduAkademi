@@ -7,7 +7,7 @@ use yii\grid\GridView;
 /* @var $searchModel app\models\DatacabangSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Datacabangs';
+$this->title = 'Data Cabang';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="datacabang-index">
@@ -15,7 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Create Datacabang', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Tambah Data Cabang', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
@@ -26,8 +26,13 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
-            'IdCabang',
-            'IdKabupatenAtauKota',
+            // 'IdCabang',
+            [
+                'attribute' => 'IdKabupatenAtauKota',
+                'value' => 'idKabupatenAtauKota.NamaKabupatenAtauKota',
+                'label' =>'Nama Kabupaten/Kota',
+            ],
+            
             'NamaCabang',
             'Keterangan',
 

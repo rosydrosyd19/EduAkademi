@@ -25,13 +25,17 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-            [
-                'attribute'=>'IdProvinsi',
-                'value'=>'idProvinsi.NamaProvinsi',
-            ],
-            // 'idProvinsi.NamaProvinsi',
+
             // 'IdKabupatenAtauKota',
-            'NamaKabupatenAtauKota',
+            [
+                'attribute' => 'IdProvinsi',
+                'value' => 'idProvinsi.NamaProvinsi',
+                'label' =>'Nama Provinsi',
+            ],
+            [
+                'attribute' => 'NamaKabupatenAtauKota',
+                'label' =>'Nama Kabupaten/Kota',
+            ],
             'Keterangan',
 
             ['class' => 'yii\grid\ActionColumn'],

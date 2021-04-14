@@ -14,6 +14,7 @@ use Yii;
  *
  * @property Datacabang[] $datacabangs
  * @property Dataprovinsi $idProvinsi
+ * @property Datakelas[] $datakelas
  */
 class Datakabupatenataukota extends \yii\db\ActiveRecord
 {
@@ -31,12 +32,9 @@ class Datakabupatenataukota extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            // [['IdKabupatenAtauKota'], 'required'],
-            [['IdKabupatenAtauKota', 'IdProvinsi'], 'integer'],
-            [['NamaKabupatenAtauKota'], 'required'],
+            [['IdProvinsi'], 'integer'],
             [['NamaKabupatenAtauKota'], 'string', 'max' => 52],
             [['Keterangan'], 'string', 'max' => 191],
-            [['IdKabupatenAtauKota'], 'unique'],
             [['IdProvinsi'], 'exist', 'skipOnError' => true, 'targetClass' => Dataprovinsi::className(), 'targetAttribute' => ['IdProvinsi' => 'IdProvinsi']],
         ];
     }
@@ -72,5 +70,15 @@ class Datakabupatenataukota extends \yii\db\ActiveRecord
     public function getIdProvinsi()
     {
         return $this->hasOne(Dataprovinsi::className(), ['IdProvinsi' => 'IdProvinsi']);
+    }
+
+    /**
+     * Gets query for [[Datakelas]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getDatakelas()
+    {
+        return $this->hasMany(Datakelas::className(), ['IdKabupatenAtauKota' => 'IdKabupatenAtauKota']);
     }
 }

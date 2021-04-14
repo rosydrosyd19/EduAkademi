@@ -92,16 +92,12 @@ class DatakabupatenataukotaController extends Controller
     {
         $model = $this->findModel($id);
 
-        $data = Dataprovinsi::find()->all();
-        $data = ArrayHelper::map($data,'IdProvinsi', 'NamaProvinsi');
-
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->IdKabupatenAtauKota]);
         }
 
         return $this->render('update', [
             'model' => $model,
-            'data' => $data,
         ]);
     }
 

@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Datakabupatenataukota */
 
-$this->title = 'Tambah Data Kabupaten/kota';
-$this->params['breadcrumbs'][] = ['label' => 'Data Kabupaten/kota', 'url' => ['index']];
+$this->title = 'Create Datakabupatenataukota';
+$this->params['breadcrumbs'][] = ['label' => 'Datakabupatenataukotas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="datakabupatenataukota-create">

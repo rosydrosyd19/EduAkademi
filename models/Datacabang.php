@@ -30,7 +30,7 @@ class Datacabang extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['IdCabang'], 'required'],
+            // [['IdCabang'], 'required'],
             [['IdCabang', 'IdKabupatenAtauKota'], 'integer'],
             [['NamaCabang'], 'string', 'max' => 52],
             [['Keterangan'], 'string', 'max' => 191],

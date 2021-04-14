@@ -5,8 +5,8 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model app\models\Datacabang */
 
-$this->title = 'Create Datacabang';
-$this->params['breadcrumbs'][] = ['label' => 'Datacabangs', 'url' => ['index']];
+$this->title = 'Tambah Data Cabang';
+$this->params['breadcrumbs'][] = ['label' => 'Data Cabang', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="datacabang-create">
@@ -15,6 +15,8 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <?= $this->render('_form', [
         'model' => $model,
+        'data' => $data,
+        // 'data2' => $data2,
     ]) ?>
 
 </div>

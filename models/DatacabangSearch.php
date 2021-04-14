@@ -17,8 +17,8 @@ class DatacabangSearch extends Datacabang
     public function rules()
     {
         return [
-            [['IdCabang', 'IdKabupatenAtauKota'], 'integer'],
-            [['NamaCabang', 'Keterangan'], 'safe'],
+            [['IdCabang'], 'integer'],
+            [['NamaCabang', 'Keterangan', 'IdKabupatenAtauKota'], 'safe'],
         ];
     }
 
@@ -56,14 +56,17 @@ class DatacabangSearch extends Datacabang
             return $dataProvider;
         }
 
+        $query->joinWith('idKabupatenAtauKota');
+
         // grid filtering conditions
         $query->andFilterWhere([
             'IdCabang' => $this->IdCabang,
-            'IdKabupatenAtauKota' => $this->IdKabupatenAtauKota,
+            // 'IdKabupatenAtauKota' => $this->IdKabupatenAtauKota,
         ]);
 
         $query->andFilterWhere(['like', 'NamaCabang', $this->NamaCabang])
-            ->andFilterWhere(['like', 'Keterangan', $this->Keterangan]);
+            ->andFilterWhere(['like', 'Keterangan', $this->Keterangan])
+            ->andFilterWhere(['like', 'datakabupatenataukota.NamaKabupatenAtauKota', $this->IdKabupatenAtauKota]);
 
         return $dataProvider;
     }

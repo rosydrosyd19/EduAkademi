@@ -6,8 +6,8 @@ use yii\helpers\Html;
 /* @var $model app\models\Dataprovinsi */
 
 $this->title = 'Update Data Provinsi: ' . $model->NamaProvinsi;
-$this->params['breadcrumbs'][] = ['label' => 'Data Provinsis', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->IdProvinsi, 'url' => ['view', 'id' => $model->IdProvinsi]];
+$this->params['breadcrumbs'][] = ['label' => 'Data Provinsi', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => $model->NamaProvinsi, 'url' => ['view', 'id' => $model->IdProvinsi]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="dataprovinsi-update">

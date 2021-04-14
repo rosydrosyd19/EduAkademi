@@ -29,12 +29,8 @@ class Dataprovinsi extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            // [['IdProvinsi'], 'required'],
-            [['IdProvinsi'], 'integer'],
-            [['NamaProvinsi'], 'required'],
             [['NamaProvinsi'], 'string', 'max' => 52],
             [['Keterangan'], 'string', 'max' => 191],
-            [['IdProvinsi'], 'unique'],
         ];
     }
 

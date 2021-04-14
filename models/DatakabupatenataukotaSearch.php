@@ -17,8 +17,8 @@ class DatakabupatenataukotaSearch extends Datakabupatenataukota
     public function rules()
     {
         return [
-            [['IdKabupatenAtauKota', 'IdProvinsi'], 'integer'],
-            [['NamaKabupatenAtauKota', 'Keterangan'], 'safe'],
+            [['IdKabupatenAtauKota'], 'integer'],
+            [['NamaKabupatenAtauKota', 'Keterangan', 'IdProvinsi'], 'safe'],
         ];
     }
 
@@ -48,22 +48,29 @@ class DatakabupatenataukotaSearch extends Datakabupatenataukota
             'query' => $query,
         ]);
 
-        $this->load($params);
+        // $this->load($params);
 
-        if (!$this->validate()) {
-            // uncomment the following line if you do not want to return any records when validation fails
-            // $query->where('0=1');
+        // if (!$this->validate()) {
+        //     // uncomment the following line if you do not want to return any records when validation fails
+        //     // $query->where('0=1');
+        //     return $dataProvider;
+        // }
+
+        if (!($this->load($params) && $this->validate())) {
             return $dataProvider;
         }
+
+        $query->joinWith('idProvinsi');
 
         // grid filtering conditions
         $query->andFilterWhere([
             'IdKabupatenAtauKota' => $this->IdKabupatenAtauKota,
-            'IdProvinsi' => $this->IdProvinsi,
+            // 'IdProvinsi' => $this->IdProvinsi,
         ]);
 
         $query->andFilterWhere(['like', 'NamaKabupatenAtauKota', $this->NamaKabupatenAtauKota])
-            ->andFilterWhere(['like', 'Keterangan', $this->Keterangan]);
+            ->andFilterWhere(['like', 'Keterangan', $this->Keterangan])
+            ->andFilterWhere(['like', 'dataprovinsi.NamaProvinsi', $this->IdProvinsi]);
 
         return $dataProvider;
     }

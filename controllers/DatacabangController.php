@@ -8,6 +8,8 @@ use app\models\DatacabangSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\models\datakabupatenataukota;
+use yii\helpers\ArrayHelper;
 
 /**
  * DatacabangController implements the CRUD actions for Datacabang model.
@@ -65,6 +67,12 @@ class DatacabangController extends Controller
     public function actionCreate()
     {
         $model = new Datacabang();
+        // Select2
+        $data = Datakabupatenataukota::find()->all();
+
+        $data = ArrayHelper::map($data,'IdKabupatenAtauKota', 'NamaKabupatenAtauKota');
+        // $data2 = ArrayHelper::map($data,'IdProvinsi', 'IdProvinsi');
+        //
 
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->IdCabang]);
@@ -72,6 +80,8 @@ class DatacabangController extends Controller
 
         return $this->render('create', [
             'model' => $model,
+            'data' => $data,
+            // 'data2' => $data2,
         ]);
     }
 

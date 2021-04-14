@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /* @var $model app\models\Datakabupatenataukota */
 
 $this->title = $model->NamaKabupatenAtauKota;
-$this->params['breadcrumbs'][] = ['label' => 'Data Kabupaten/kotas', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Datakabupaten/kotas', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
 ?>
@@ -16,8 +16,8 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $model->IdKabupatenAtauKota], ['class' => 'btn btn-primary']) ?>
-        <?= Html::a('Delete', ['delete', 'id' => $model->IdKabupatenAtauKota], [
+        <?= Html::a('Ubah', ['update', 'id' => $model->IdKabupatenAtauKota], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Hapus', ['delete', 'id' => $model->IdKabupatenAtauKota], [
             'class' => 'btn btn-danger',
             'data' => [
                 'confirm' => 'Are you sure you want to delete this item?',

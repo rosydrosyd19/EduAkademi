@@ -6,7 +6,7 @@ use yii\helpers\Html;
 /* @var $model app\models\Dataprovinsi */
 
 $this->title = 'Tambah Data Provinsi';
-$this->params['breadcrumbs'][] = ['label' => 'Data Provinsis', 'url' => ['index']];
+$this->params['breadcrumbs'][] = ['label' => 'Data Provinsi', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="dataprovinsi-create">

@@ -15,9 +15,7 @@ use yii\widgets\ActiveForm;
         'method' => 'get',
     ]); ?>
 
-    <?= $form->field($model, 'IdKabupatenAtauKota') ?>
-
-    <?= $form->field($model, 'IdProvinsi')->label('Nama Provinsi') ?>
+    <?= $form->field($model, 'NamaProvinsi') ?>
 
     <?= $form->field($model, 'NamaKabupatenAtauKota') ?>
 
